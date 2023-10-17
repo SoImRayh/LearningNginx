@@ -1,0 +1,7 @@
+FROM nginx:latest
+
+COPY default.conf /etc/nginx/default.conf
+
+EXPOSE 80
+
+ENTRYPOINT ["nginx", "-g", "daemon off;"]

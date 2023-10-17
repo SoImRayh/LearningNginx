@@ -1,0 +1,10 @@
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nginx
+    volumes:
+      - .:/usr/share/nginx/html
+    ports:
+      - "80:80"
