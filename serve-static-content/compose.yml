@@ -5,6 +5,13 @@ services:
       dockerfile: Dockerfile
     container_name: nginx
     volumes:
-      - .:/usr/share/nginx/html
+      # Bind da configuração
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+      # A pasta html será a mesma pasta html dentro do container
+      - ./html:/usr/share/nginx/html
+      # A pasta pdf será a mesma pasta images dentro do container
+      - ./images:/usr/share/nginx/images
+      # A pasta pdf será a mesma pasta pdf dentro do container
+      - ./pdf:/usr/share/nginx/pdf
     ports:
       - "80:80"
